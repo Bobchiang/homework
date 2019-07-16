@@ -11,8 +11,12 @@ public class Ticket {
 
     public void print() {
         double total = (totalTicket - roundTrip) * 1000 + roundTrip * 2000 * 0.9;
-        System.out.println("Total ticket: " + totalTicket + "\r\n" +
-                "Round-trip: " + roundTrip + "\r\n" +
-                "Total: " + (int)total);
+        if (totalTicket >= roundTrip) {
+            System.out.println("Total ticket: " + totalTicket + "\r\n" +
+                    "Round-trip: " + roundTrip + "\r\n" +
+                    "Total: " + (int) total);
+        }else{
+            System.out.println("總訂購張數不得低於來回票張數。");
+        }
     }
 }
